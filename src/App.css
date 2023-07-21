@@ -21,7 +21,7 @@ progress {
 }
 
 progress::-webkit-progress-bar {
-  background: #ffffff;
+  background: #fff;
 }
 
 progress::-webkit-progress-value {
@@ -29,13 +29,12 @@ progress::-webkit-progress-value {
 }
 
 .glassy {
-  background-color: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
   -webkit-backdrop-filter: blur(20px);
   backdrop-filter: blur(20px);
   box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
   border: 1px solid rgba(255, 255, 255, 0.18);
-  background-color: transparent;
-  padding: 2vw;
+  border-radius: 24px;
 }
 
 .nav-menu {
@@ -44,26 +43,59 @@ progress::-webkit-progress-value {
 
 .nav-font {
   line-height: 1.5em;
-  color:#02ffff;
+  color: #02ffff;
   font-size: 24px;
-  text-shadow: 0 0 #02ffff, 0 1.5em #0E2A47;
+  text-shadow: 0 0 #02ffff, 0 1.5em #0e2a47;
   overflow: hidden;
   transition: 0.3s;
 }
 
 .nav-font:hover {
   color: #fff300;
-  text-shadow: 0 -1.7em #fff300, 0 0 #0E2A47;
+  text-shadow: 0 -1.7em #fff300, 0 0 #0e2a47;
 }
 
 .about {
   width: 80vw;
-  height: fit-content;
+}
+
+.pic-container {
+  position: relative;
+}
+
+@keyframes morph {
+  0%,
+  100% {
+    border-radius:
+      40% 60% 70% 30% /
+      40% 40% 60% 50%;
+  }
+  34% {
+    border-radius:
+      70% 30% 50% 50% /
+      30% 30% 70% 70%;
+  }
+  67% {
+    border-radius:
+      100% 60% 60% 100% /
+      100% 100% 60% 60%;
+  }
 }
 
 .profile-pic {
-   height: 20vh;
-   width: 20vw;
-   position: relative;
-   left: 20%;
+  height: 27vh;
+  width: 27vh;
+  position: absolute;
+  border: 4px solid #0e2a47;
+  right: 70%;
+  bottom: 10%;
+  /* object-fit: cover; */
+  animation: morph 3.5s linear infinite;
 }
+
+.banner-pic {
+  width: 80%;
+  border-radius: 16px;
+}
+
+
