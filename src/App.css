@@ -30,8 +30,8 @@ progress::-webkit-progress-value {
 
 .glassy {
   background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
-  -webkit-backdrop-filter: blur(20px);
-  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
   box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
   border: 1px solid rgba(255, 255, 255, 0.18);
   border-radius: 24px;
@@ -56,7 +56,8 @@ progress::-webkit-progress-value {
 }
 
 .about {
-  width: 80vw;
+  width: 90vw;
+  color: #02ffff;
 }
 
 .pic-container {
@@ -98,5 +99,11 @@ progress::-webkit-progress-value {
 
 .banner-pic {
   width: 80%;
-  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 32px 32px 0 0;
+}
+
+.description {
+  width: 69vw;
+  background: rgba(237, 221, 217, 0.1);
 }
