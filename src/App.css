@@ -20,17 +20,13 @@ progress {
   background: transparent;
 }
 
-progress {
-  color: #fff300;
+progress::-webkit-progress-bar {
+  background: #fff300;
 }
 
-/* progress::moz-progress-bar {
-  background: #fff300;
-} */
-
-/* progress::-webkit-progress-value {
+progress::-webkit-progress-value {
   background-color: #bf44fd;
-} */
+}
 
 .glassy {
   background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
@@ -106,10 +102,10 @@ progress {
 }
 
 .description {
-  height: fit-content;
+  height: auto;
   width: 80%;
   background: rgba(238, 238, 238, 0.6);
-  color: #000000;
+  color: #000;
   border-radius: 0 0 32px 32px;
 }
 
@@ -123,14 +119,13 @@ article {
   width: 60px;
   height: 60px;
   border-radius: 50%;
-  outline: 2px solid #000000;
-  transition-property:
-    outline-offset, outline-color, background-color
-  ;
+  outline: 2px solid #000;
+  transition-property: outline-offset, outline-color, background-color;
   transition-duration: 0.25s;
 }
 
 .site-icon:hover {
   outline-offset: 4px;
+
   /* outline: ; */
 }
