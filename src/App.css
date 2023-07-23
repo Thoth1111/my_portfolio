@@ -20,13 +20,17 @@ progress {
   background: transparent;
 }
 
-progress::-webkit-progress-bar {
-  background: #fff;
+progress {
+  color: #fff300;
 }
 
-progress::-webkit-progress-value {
+/* progress::moz-progress-bar {
+  background: #fff300;
+} */
+
+/* progress::-webkit-progress-value {
   background-color: #bf44fd;
-}
+} */
 
 .glassy {
   background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
@@ -86,14 +90,12 @@ progress::-webkit-progress-value {
 }
 
 .profile-pic {
-  height: 27vh;
-  width: 27vh;
+  height: 80%;
+  width: 18%;
   position: absolute;
   border: 4px solid #0e2a47;
-  right: 70%;
+  right: 68%;
   bottom: 10%;
-
-  /* object-fit: cover; */
   animation: morph 3.5s linear infinite;
 }
 
@@ -104,6 +106,31 @@ progress::-webkit-progress-value {
 }
 
 .description {
-  width: 69vw;
-  background: rgba(237, 221, 217, 0.1);
+  height: fit-content;
+  width: 80%;
+  background: rgba(238, 238, 238, 0.6);
+  color: #000000;
+  border-radius: 0 0 32px 32px;
+}
+
+article {
+  text-align: center;
+  font-size: 28px;
+  font-weight: 600;
+}
+
+.site-icon {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  outline: 2px solid #000000;
+  transition-property:
+    outline-offset, outline-color, background-color
+  ;
+  transition-duration: 0.25s;
+}
+
+.site-icon:hover {
+  outline-offset: 4px;
+  /* outline: ; */
 }
