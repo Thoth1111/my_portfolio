@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/all';
 import Navbar from './Navbar';
-import About from './About';
+import Profile from './Profile';
 
 const Page = () => {
     useEffect(() => {
@@ -19,7 +19,7 @@ const Page = () => {
         <div className="main">
             <progress max="100" value="0"></progress>
             <Navbar />
-            <About />
+            <Profile />
         </div>
     );
 };
