@@ -1,9 +1,9 @@
 import React from 'react';
-import Github from '../assets/images/github.svg';
+import Github from '../assets/images/github.png';
 import LinkedIn from '../assets/images/linkedin.svg';
-import Threads from '../assets/images/threads.svg';
+import Threads from '../assets/images/threads.png';
 import Twitter from '../assets/images/twitter.svg';
-import HackerRank from '../assets/images/hackerrank.svg';
+import HackerRank from '../assets/images/hackerrank.png';
 
 const Socials = () => {
     const sites = [
@@ -15,12 +15,12 @@ const Socials = () => {
     ];
 
     return (
-        <div className="d-flex gap-5">
+        <div className="d-flex gap-5 mt-5">
             {sites.map((site) => {
                 return (
-                <div classname={`${site.name} site-icon`} key={site.name}>
+                <div className="d-flex justify-content-center align-items-center icon-container" id={`${site.name}-container`} key={site.name}>
                     <a target="_blank" href={site.link}>
-                        <img src={site.icon} className={`${site.name}`-icon} alt={site.name}/>
+                        <img src={site.icon} className={`${site.name} site-pic`} alt={site.name}/>
                     </a>
                 </div>
                 )
