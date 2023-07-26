@@ -1,16 +1,14 @@
 .main {
-  background-image: url('./assets/images/coloredPatterns.svg');
-  background-repeat: no-repeat;
-  background-size: cover;
+  background-color: rgba(255, 226, 254, 0.3);
   color: #273c2c;
-  height: 100vh;
-  width: 100vw;
-  backdrop-filter: blur(20px);
+  height: 100%;
+  width: 100%;
+  backdrop-filter: blur(30px);
 }
 
 progress {
   position: fixed;
-  z-index: 1;
+  z-index: 2;
   top: 0;
   left: 0;
   -webkit-appearance: none;
@@ -40,9 +38,11 @@ progress::-webkit-progress-value {
 
 .nav-menu {
   width: 100%;
-  height: 8%;
+  height: 100px;
   background-color: #fff;
   box-shadow: 0 8px 32px 0 rgba(211, 193, 210, 0.37);
+  position: fixed;
+  z-index: 1;
 }
 
 .nav-font {
@@ -60,13 +60,10 @@ progress::-webkit-progress-value {
   border-bottom: 2px solid #939196;
 }
 
-.about {
-  width: 100%;
-  background-color: rgba(255, 226, 254, 0.6);
-}
-
-.pic-container {
-  position: relative;
+.profile {
+  background-image: url('./assets/images/coloredPatterns.svg');
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 @keyframes morph {
@@ -120,14 +117,10 @@ progress::-webkit-progress-value {
   }
 }
 
-.profile {
-  height: auto;
-  width: 100%;
-}
-
 article {
   width: 70%;
   text-align: center;
+  line-height: 50px;
   font-size: 28px;
   font-weight: 600;
 }
@@ -169,8 +162,8 @@ article {
 }
 
 .site-pic {
-  width: 36px;
-  height: 36px;
+  width: 40px;
+  height: 40px;
 }
 
 .site-pic:hover {
@@ -193,4 +186,40 @@ article {
   40% {
     transform: rotate(-15deg);
   }
+}
+
+.heading {
+  color: #626868;
+  font-weight: 700;
+  font-size: 56px;
+}
+
+.animate-heading {
+  animation: tracking-in-expand 0.7s cubic-bezier(0.215, 0.61, 0.355, 1) both;
+}
+
+@keyframes tracking-in-expand {
+  0% {
+    letter-spacing: -0.5em;
+    opacity: 0;
+  }
+
+  40% {
+    opacity: 0.6;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+.skill-card {
+  width: 250px;
+  height: 250px;
+}
+
+.skills-text {
+  font-size: 24px;
+  font-weight: 700;
+  color: #626868;
 }

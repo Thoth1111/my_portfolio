@@ -15,7 +15,7 @@ const Socials = () => {
     ];
 
     return (
-        <div className="d-flex gap-5 mt-5">
+        <div className="d-flex gap-5 mb-5 pb-5">
             {sites.map((site) => {
                 return (
                 <div className="d-flex justify-content-center align-items-center icon-container" id={`${site.name}-container`} key={site.name}>
