@@ -33,7 +33,7 @@ progress::-webkit-progress-value {
   backdrop-filter: blur(10px);
   box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
   border: 1px solid rgba(255, 255, 255, 0.18);
-  border-radius: 24px;
+  /* border-radius: 24px; */
 }
 
 .nav-menu {
@@ -190,8 +190,8 @@ article {
 
 .heading {
   color: #626868;
-  font-weight: 700;
-  font-size: 56px;
+  font-weight: 600;
+  font-size: 64px;
 }
 
 .animate-heading {
@@ -215,11 +215,75 @@ article {
 
 .skill-card {
   width: 250px;
-  height: 250px;
+  height: 200px;
 }
 
 .skills-text {
   font-size: 24px;
   font-weight: 700;
   color: #626868;
+}
+
+.projects {
+  background-image: url('./assets/images/coloredPatterns.svg');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.project-card {
+  background-color: rgba(98, 104, 104, 0.13);
+  -webkit-backdrop-filter: blur(5px);
+  backdrop-filter: blur(5px);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 12px;
+  margin: 0 10%;
+  width: 80%;
+}
+
+.project-pic {
+  width: 700px;
+  height: 400px;
+  transition: transform 0.3s ease;
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37); 
+}
+
+.project-pic:hover {
+  transform:scale(1.4);
+  transition-delay: 1s;
+  cursor: pointer;
+}
+
+.project-pic.hidden {
+  display: none;
+}
+
+.project-info {
+  text-align: center;
+  line-height: 45px;
+  font-size: 28px;
+  font-weight: 600;  
+}
+
+.project-info > p {
+  color: #626868;
+  text-align: center;
+}
+
+.stack {
+  font-size: 18px;
+  color: #626868;
+  border-radius: 4px;
+}
+
+.skill-btns {
+  background-color: #273c2c;
+  color: #fff;
+  font-size: 24px;
+}
+
+.skill-btns:hover {
+  background-color: #d3c1d2;
+  color: #273c2c;
+  transform: translate(-2px, -5px);
 }
