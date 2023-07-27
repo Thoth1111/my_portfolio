@@ -33,6 +33,7 @@ progress::-webkit-progress-value {
   backdrop-filter: blur(10px);
   box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
   border: 1px solid rgba(255, 255, 255, 0.18);
+
   /* border-radius: 24px; */
 }
 
@@ -245,11 +246,11 @@ article {
   width: 700px;
   height: 400px;
   transition: transform 0.3s ease;
-  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37); 
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
 }
 
 .project-pic:hover {
-  transform:scale(1.4);
+  transform: scale(1.4);
   transition-delay: 1s;
   cursor: pointer;
 }
@@ -262,7 +263,7 @@ article {
   text-align: center;
   line-height: 45px;
   font-size: 28px;
-  font-weight: 600;  
+  font-weight: 600;
 }
 
 .project-info > p {
