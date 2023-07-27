@@ -117,11 +117,7 @@ article {
 
 #HackerRank-container {
   background-color: #1ba94c;
-  outline: 2px solid#1BA94C;  
-}
-
-#HackerRank-container:hover, #LinkedIn-container:hover, #Twitter-container:hover, #Threads-container:hover, #Github-container:hover {
-  outline-offset: 3px;
+  outline: 2px solid#1BA94C;
 }
 
 #LinkedIn-container {
@@ -142,6 +138,14 @@ article {
 #Github-container {
   background-color: #000;
   outline: 2px solid #000;
+}
+
+#HackerRank-container:hover,
+#LinkedIn-container:hover,
+#Twitter-container:hover,
+#Threads-container:hover,
+#Github-container:hover {
+  outline-offset: 3px;
 }
 
 .site-pic {
@@ -227,10 +231,11 @@ article {
 
 @keyframes flip-horizontal-top {
   0% {
-            transform: rotateX(0);
+    transform: rotateX(0);
   }
+
   100% {
-            transform: rotateX(180deg);
+    transform: rotateX(180deg);
   }
 }
 
