@@ -41,10 +41,47 @@ const carouselItems = [
 const Carousel = () => {
     const settings = {
         dots: true,
-        infinite: false,
+        infinite: true,
         speed: 500,
-        slidesToShow: 7,
+        slidesToShow: 8,
         slidesToScroll: 4,
+        initialSlide: 0,
+        autoplay: true,
+        responsive: [
+            {
+                breakpoint: 1024,
+                settings: {
+                    slidesToShow: 6,
+                    slidesToScroll: 3,
+                    infinite: false,
+                    dots: true
+                }
+            },
+            {
+                breakpoint: 800,
+                settings: {
+                    slidesToShow: 4,
+                    slidesToScroll: 2,
+                    initialSlide: 2
+                }
+            },
+            {
+                breakpoint: 600,
+                settings: {
+                    slidesToShow: 3,
+                    slidesToScroll: 2,
+                    initialSlide: 2
+                }
+            },
+            {
+                breakpoint: 480,
+                settings: {
+                    slidesToShow: 3,
+                    slidesToScroll: 2,
+                    initialSlide: 2
+                }
+            }
+        ]
     };
 
     return (
@@ -52,8 +89,8 @@ const Carousel = () => {
             <Slider {...settings}>
                 {carouselItems.map((skill, index) => (
                     <div key={index} className="d-flex flex-column align-items-center p-2 mx-3 justify-content-between skill-card">
-                        <p className="skills-text mb-3" style={{color: '#d3c1d2'}}>{skill.description}</p>
-                        <img src={skill.logo} alt={skill.name} style={{width:'90px', height:'95px'}} />
+                        <p className="skills-text mb-4" style={{color: '#d3c1d2'}}>{skill.description}</p>
+                        <img src={skill.logo} alt={skill.name} style={{width:'75px', height:'70px'}} />
                         <p className="skills-text mt-1">{skill.name}</p>
                     </div>
                 ))}
