@@ -21,7 +21,7 @@ const Slideshow = ({ images }) => {
     return (
         <div style={{position: 'relative'}} onMouseEnter={handleImageHover} onMouseLeave={handleImageHover} >
             {images.map((image, index) => (
-                <img key="index" 
+                <img key={index} 
                  className={`project-pic ${ index === currentIndex ? 'active' : 'hidden'}`} 
                  src={image} alt={`project ${index}`}          
                 />

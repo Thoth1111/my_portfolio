@@ -48,7 +48,7 @@ const projectList = [
 const Projects = ( { headingRef }) => {
     return (
         <section className="d-flex flex-column align-items-center justify-content-center pt-5 mb-5 projects">
-            <h1 className="heading my-5 pb-5" id="projects" ref={headingRef}>Projects</h1>
+            <h1 className="heading mb-5 pb-5" id="projects" ref={headingRef}>Projects</h1>
             <div className="d-flex flex-column justify-content-center align-items-center">
                 {projectList.map((project, index) => (
                     <div key={index} className="d-flex align-items-center justify-content-center gap-5 p-5 mb-5 project-card">
