@@ -1,5 +1,18 @@
+
+@font-face {
+  font-family: 'Poppins';
+  src: url('./assets/Poppins/Poppins-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+}
+
 :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-family: 'Poppins', sans-serif;
+  font-style: normal;
   line-height: 1.5;
   font-weight: 400;
   color: #273c2c;

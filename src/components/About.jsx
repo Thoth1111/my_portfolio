@@ -11,7 +11,7 @@ const About = ({ headingRef }) => {
                     I'm a certified Full-stack developer having transitioned from a brief career stint in aeronautical (avionics) engineering. I also have years of experience in customer service, technical support, and management.
                     Currently, I build products, features or websites. I also have a passion and love for game development that I'm actively pursuing, and I enjoy getting my hands dirty with some DIY crafts in my spare time.
                     Please take a moment to peruse through some of my past works, and skills.
-                    I'd be happy to hear from you via the <a href="#contact" style={{color: '#626868'}}>contact section</a>, if my endeavors resonate with your vision.
+                    I'd be happy to hear from you via the <a href="#contacts" style={{color: '#626868'}}>contact section</a>, if my endeavors resonate with your vision.
                 </article>
             </section>
             <Skills />

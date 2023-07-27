@@ -3,6 +3,7 @@ import React, { useState, useEffect } from 'react';
 const Slideshow = ({ images }) => {
     const [currentIndex, setCurrentIndex] = useState(0);
     const [isPaused, setIsPaused] = useState(false);
+    const [isScaled, setIsScaled] = useState(false);
 
     useEffect(() => {
         const interval = setInterval(() => {
@@ -18,12 +19,16 @@ const Slideshow = ({ images }) => {
         setIsPaused((prevPaused) => !prevPaused);
     };
 
+    const handleClick = () => {
+        setIsScaled((prevScaled) => !prevScaled);
+    }
+
     return (
-        <div style={{position: 'relative'}} onMouseEnter={handleImageHover} onMouseLeave={handleImageHover} >
+        <div style={{position: 'relative'}} onMouseEnter={handleImageHover} onMouseLeave={handleImageHover} onClick={handleClick}>
             {images.map((image, index) => (
-                <img key="index" 
-                 className={`project-pic ${ index === currentIndex ? 'active' : 'hidden'}`} 
-                 src={image} alt={`project ${index}`}          
+                <img key={index} 
+                 className={`project-pic ${ index === currentIndex ? 'active' : 'hidden'} ${isScaled && isPaused ? 'scaled' : ''}`} 
+                 src={image} alt={`project ${index}`}        
                 />
             ))}
         </div>
