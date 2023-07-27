@@ -6,47 +6,31 @@
   backdrop-filter: blur(30px);
 }
 
-progress {
-  position: fixed;
-  z-index: 2;
-  top: 0;
-  left: 0;
-  -webkit-appearance: none;
-  appearance: none;
-  width: 100%;
-  height: 8px;
-  border: none;
-  background: transparent;
-}
-
-progress::-webkit-progress-bar {
-  background: #fff;
-}
-
-progress::-webkit-progress-value {
-  background-color: #939196;
-}
-
 .glassy {
   background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
-  -webkit-backdrop-filter: blur(10px);
-  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(50px);
+  backdrop-filter: blur(50px);
   box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
   border: 1px solid rgba(255, 255, 255, 0.18);
-
-  /* border-radius: 24px; */
 }
 
 .nav-menu {
   width: 100%;
-  height: 100px;
-  background-color: #fff;
+  height: 80px;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
   box-shadow: 0 8px 32px 0 rgba(211, 193, 210, 0.37);
-  position: fixed;
-  z-index: 1;
+  position: sticky;
+  top: 0;
+  left: 0;
+  z-index: 99;
 }
 
 .nav-font {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
+  -webkit-backdrop-filter: blur(50px);
+  backdrop-filter: blur(50px);
   line-height: 1.5em;
   color: #273c2c;
   font-size: 24px;
@@ -127,44 +111,42 @@ article {
 }
 
 .icon-container {
-  background-color: #d3c1d2;
   padding: 10px;
   border-radius: 50%;
 }
 
-#HackerRank-container:hover {
+#HackerRank-container {
   background-color: #1ba94c;
-  outline: 2px solid#1BA94C;
+  outline: 2px solid#1BA94C;  
+}
+
+#HackerRank-container:hover, #LinkedIn-container:hover, #Twitter-container:hover, #Threads-container:hover, #Github-container:hover {
   outline-offset: 3px;
 }
 
-#LinkedIn-container:hover {
+#LinkedIn-container {
   background-color: #0a66c2;
   outline: 2px solid #0a66c2;
-  outline-offset: 3px;
 }
 
-#Twitter-container:hover {
+#Twitter-container {
   background-color: #1a8cd8;
   outline: 2px solid #1a8cd8;
-  outline-offset: 3px;
 }
 
-#Threads-container:hover {
+#Threads-container {
   background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285aeb 90%);
   outline: 2px solid #d6249f;
-  outline-offset: 3px;
 }
 
-#Github-container:hover {
+#Github-container {
   background-color: #000;
   outline: 2px solid #000;
-  outline-offset: 3px;
 }
 
 .site-pic {
-  width: 40px;
-  height: 40px;
+  width: 28px;
+  height: 28px;
 }
 
 .site-pic:hover {
@@ -191,6 +173,7 @@ article {
 
 .heading {
   color: #626868;
+  margin-top: 150px;
   font-weight: 600;
   font-size: 64px;
 }
@@ -242,6 +225,23 @@ article {
   width: 80%;
 }
 
+@keyframes flip-horizontal-top {
+  0% {
+            transform: rotateX(0);
+  }
+  100% {
+            transform: rotateX(180deg);
+  }
+}
+
+.project-pic.active {
+  animation: flip-horizontal-top 0.4s cubic-bezier(0.455, 0.03, 0.515, 0.955) reverse forwards;
+}
+
+.project-pic.hidden {
+  display: none;
+}
+
 .project-pic {
   width: 700px;
   height: 400px;
@@ -251,12 +251,9 @@ article {
 
 .project-pic:hover {
   transform: scale(1.4);
+  animation-play-state: paused;
   transition-delay: 1s;
   cursor: pointer;
-}
-
-.project-pic.hidden {
-  display: none;
 }
 
 .project-info {
@@ -287,4 +284,25 @@ article {
   background-color: #d3c1d2;
   color: #273c2c;
   transform: translate(-2px, -5px);
+}
+
+.CTA {
+  width: 50%;
+}
+
+.form-entries {
+  width: 100%;
+}
+
+.fill-area {
+  width: 60%;
+  padding: 10px;
+  font-size: 24px;
+  outline: none;
+  border: #d3c1d2 2px solid;
+}
+
+.fill-area::placeholder {
+  color: #939196;
+  font-size: 24px;
 }
