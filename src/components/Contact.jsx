@@ -11,7 +11,7 @@ const Contact = ({ headingRef }) => {
                     <h2 className="px-auto" style={{fontSize:'48px'}}>I'm always interested in hearing about new projects, so if you'd like to chat please get in touch.</h2>
                 </div>
                 <div className="form-entries p-0 mb-5">
-                    <form action="" method="post" className="d-flex flex-column gap-3 justify-content-center align-items-center" validate>
+                    <form action="" method="post" className="d-flex flex-column gap-3 justify-content-center align-items-center">
                         <input type="text" className="fill-area rounded" id="fullname" name="fname" maxlength="70" required placeholder="Full Name" />
                         <input type="email" className="fill-area rounded" id="address" name="email" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" placeholder="Email Address" />
                         <textarea rows="8" className="fill-area rounded" id="message" maxLength="500" required placeholder="Your message" />
