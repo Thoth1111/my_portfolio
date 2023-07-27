@@ -235,7 +235,7 @@ article {
 }
 
 .project-pic.active {
-  animation: flip-horizontal-top 0.4s cubic-bezier(0.455, 0.03, 0.515, 0.955) reverse forwards;
+  animation: flip-horizontal-top 0.4s cubic-bezier(0.455, 0.03, 0.515, 0.955) reverse;
 }
 
 .project-pic.hidden {
@@ -247,12 +247,11 @@ article {
   height: 400px;
   transition: transform 0.3s ease;
   box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+  cursor: zoom-in;
 }
 
-.project-pic:hover {
+.project-pic.scaled {
   transform: scale(1.4);
-  animation-play-state: paused;
-  transition-delay: 1s;
   cursor: pointer;
 }
 
