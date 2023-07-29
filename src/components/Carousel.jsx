@@ -43,7 +43,7 @@ const Carousel = () => {
         dots: true,
         infinite: true,
         speed: 500,
-        slidesToShow: 8,
+        slidesToShow: 6,
         slidesToScroll: 4,
         initialSlide: 0,
         autoplay: true,
@@ -51,7 +51,7 @@ const Carousel = () => {
             {
                 breakpoint: 1024,
                 settings: {
-                    slidesToShow: 6,
+                    slidesToShow: 3,
                     slidesToScroll: 3,
                     infinite: false,
                     dots: true
@@ -60,7 +60,7 @@ const Carousel = () => {
             {
                 breakpoint: 800,
                 settings: {
-                    slidesToShow: 4,
+                    slidesToShow: 3,
                     slidesToScroll: 2,
                     initialSlide: 2
                 }
@@ -76,7 +76,7 @@ const Carousel = () => {
             {
                 breakpoint: 480,
                 settings: {
-                    slidesToShow: 3,
+                    slidesToShow: 2,
                     slidesToScroll: 2,
                     initialSlide: 2
                 }
@@ -90,7 +90,7 @@ const Carousel = () => {
                 {carouselItems.map((skill, index) => (
                     <div key={index} className="d-flex flex-column align-items-center p-2 mx-3 justify-content-between skill-card">
                         <p className="skills-text mb-4" style={{color: '#d3c1d2'}}>{skill.description}</p>
-                        <img src={skill.logo} alt={skill.name} style={{width:'75px', height:'70px'}} />
+                        <img src={skill.logo} alt={skill.name} className="skill-logos"/>
                         <p className="skills-text mt-1">{skill.name}</p>
                     </div>
                 ))}

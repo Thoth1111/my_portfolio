@@ -17,7 +17,7 @@ const projectList = [
         image: [ vespa, vespa1 ], 
         link: 'https://vespa-reservation.onrender.com',
         source: 'https://github.com/Thoth1111/Fullstack-Capstone-Project',
-        stack: ['Ruby on Rails', 'React', 'Redux', 'PostgreSQL', 'Tailwind CSS', 'JWT']
+        stack: ['Ruby on Rails', 'React', 'Redux', 'PostgreSQL', 'Tailwind CSS', 'Devise JWT']
     },
     {
         name: 'FundSense Budget App', 
@@ -48,20 +48,20 @@ const projectList = [
 const Projects = ( { headingRef }) => {
     return (
         <section className="d-flex flex-column align-items-center justify-content-center pt-5 mb-5 projects">
-            <h1 className="heading mb-5 pb-5" id="projects" ref={headingRef}>Projects</h1>
+            <h1 className="heading" id="projects" ref={headingRef}>Projects</h1>
             <div className="d-flex flex-column justify-content-center align-items-center">
                 {projectList.map((project, index) => (
-                    <div key={index} className="d-flex align-items-center justify-content-center gap-5 p-5 mb-5 project-card">
+                    <div key={index} className="gap-5 p-4 my-5 project-card">
                         <Slideshow images={project.image} />                        
-                        <div className="project-info d-flex flex-column justify-content-center align-items-center" style={{height: '500px'}}>
+                        <div className="project-info d-flex flex-column justify-content-center align-items-center">
                             <h2 className="fw-bold mb-1">{project.name}</h2>
-                            <div className="d-flex wrap justify-content-center gap-2 align-items-center mb-5">
+                            <div className="mb-5">
                                 {project.stack.map((item, index) => (
-                                    <span key={index} className="stack px-2 fw-bold">{item}</span>
+                                    <span key={index} className="stack fw-bold">{item}</span>
                                 ))}
                             </div>
-                            <p style={{color: '#626868', width: '50%'}}>{project.description}</p>
-                            <div className="d-flex justify-content-between gap-5 align-items-center mt-4">
+                            <p>{project.description}</p>
+                            <div className="d-flex justify-content-between gap-5 align-items-center my-4">
                                 <a href={project.link} className="border rounded skill-btns px-3" target="_blank" rel="noreferrer">Project Demo</a>
                                 <a href={project.source} className="border rounded skill-btns px-3" target="_blank" rel="noreferrer">Source Code</a>
                             </div>
