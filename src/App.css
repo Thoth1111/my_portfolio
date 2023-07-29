@@ -219,6 +219,7 @@
 
   #skills {
     font-size: 36px;
+    margin-bottom: -30px;
   }
 
   .skill-card {
@@ -336,7 +337,7 @@
   }
 
   #contacts {
-    margin-top: -40px;
+    margin-top: -25px;
   }
 
   .CTA {
@@ -583,6 +584,7 @@
 
   #projects {
     margin-bottom: 40px;
+    margin-top: -15px;
   }
 
   .projects {
