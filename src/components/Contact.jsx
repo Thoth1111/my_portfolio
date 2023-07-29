@@ -8,10 +8,10 @@ const Contact = ({ headingRef }) => {
     const [email, setEmail] = useState('');
     const [message, setMessage] = useState('');
 
-    const sendMail = (e) => {
+    const sendMail = async(e) => {
         e.preventDefault();
         if (name && email && message) {
-            axios.post('http://alwyn-androvelle.onrender.com/send-email',{
+            await axios.post('http://alwyn-androvelle.onrender.com/send-email',{
                 name: name,
                 email: email,
                 message: message
