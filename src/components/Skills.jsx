@@ -6,7 +6,7 @@ const Skills = ({ headingRef }) => {
     return (
         <>
         <section className="d-flex flex-column align-items-center justify-content-center pt-5">
-            <h3 className="heading my-5" ref={headingRef} id="skills" style={{fontSize: 36}}>Technical Skills</h3>            
+            <h3 className="heading" ref={headingRef} id="skills">Technical Skills</h3>            
         </section>
         <Carousel />
         </>
