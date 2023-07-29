@@ -11,7 +11,7 @@ const Contact = ({ headingRef }) => {
     const sendMail = async(e) => {
         e.preventDefault();
         if (name && email && message) {
-            await axios.post('http://alwyn-androvelle.onrender.com/send-email',{
+            await axios.post('https://portfolio-server-94jy.onrender.com/send-email',{
                 name: name,
                 email: email,
                 message: message
