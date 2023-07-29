@@ -5,9 +5,9 @@ import Socials from './Socials';
 const Profile = () => {
     return (
         <section className="profile pt-5">
-        <div className="d-flex justify-content-center align-items-center px-auto my-5 p-5" style={{gap:'15%'}}>
+        <div className="profile-cont px-auto my-5 p-5" style={{gap:'15%'}}>
             <div className="w-5">
-                <img src={profile} className="profile-pic mt-5" />
+                <img src={profile} className="profile-pic" />
             </div>
             <div className="w-5">
                 <h1 className="intro">
