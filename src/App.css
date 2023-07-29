@@ -116,7 +116,7 @@
     width: 70%;
     text-align: center;
     line-height: 50px;
-    font-size: 28px;
+    font-size: 22px;
     font-weight: 600;
   }
 
@@ -345,7 +345,7 @@
   }
 
   .CTA > h2 {
-    font-size: 48px;
+    font-size: 40px;
   }
 
   .form-entries {

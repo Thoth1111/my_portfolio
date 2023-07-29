@@ -52,7 +52,7 @@ const Contact = ({ headingRef }) => {
                         <input type="text" className="fill-area rounded" onChange={handleNameChange} id="fullname" name="Your name" maxLength="70" required placeholder="Full Name" value={name}/>
                         <input type="email" className="fill-area rounded" onChange={handleEmailChange} id="address" name="Your email" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" placeholder="Email Address" value={email}/>
                         <textarea rows="8" className="fill-area rounded" onChange={handleMessageChange} id="message" maxLength="500" required placeholder="Your message" value={message}/>
-                        <input type="submit" value="Email Me" className="rounded skill-btns p-3 mt-3 mb-5" id="post"/>
+                        <input type="submit" value="Email Me" className="rounded skill-btns p-2 mt-3 mb-5" id="post"/>
                     </form>   
                 </div>
             </div>
