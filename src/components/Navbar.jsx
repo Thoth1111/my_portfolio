@@ -1,9 +1,8 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import Menu from '../assets/images/menu.svg';
 import x from '../assets/images/x.svg';
 
 const Navbar = () => {
-    const [isMobile, setIsMobile] = useState(false);
     const [showMenu, setShowMenu] = useState(false);
     const [closer, setCloser] = useState(false);
 
@@ -11,26 +10,10 @@ const Navbar = () => {
         setShowMenu(!showMenu);
         setCloser(!closer);
     };
-
-    useEffect(() => {
-        const handleResize = () => {
-            if (window.innerWidth <= 768) {
-                setIsMobile(true);
-            } else {
-                setIsMobile(false);
-            }
-        };
-
-        handleResize();
-
-        window.addEventListener('resize', handleResize);
-        return () => window.removeEventListener('resize', handleResize);
-    }, []);
     
     return (
         <>
-        { isMobile ? ( 
-            <div className="nav-menu">
+            <div className="nav-menu-mobile">
                 <ul className={`mobile-menu gap-5 ${showMenu ? 'active' : ''}`}>
                     <li className="nav-item">
                         <a className="nav-font glassy" href="#about">About</a>
@@ -46,8 +29,6 @@ const Navbar = () => {
                 : <img onClick={handleMenuToggle} src={Menu} className="menu-icon rounded mt-3 pl-2 glassy"/>
                 }
             </div>
-        )
-        :(
             <nav className="nav-menu py-2 px-4">
                 <div className="d-flex justify-content-center align-items-center gap-5 container-fluid">
                     <a className="nav-font rounded px-1" href="#about">About</a>
@@ -56,7 +37,6 @@ const Navbar = () => {
                     <a className="nav-font rounded px-1" href="#contacts">Contacts</a>
                 </div>        
             </nav>
-        )}
         </>
     );
 };
