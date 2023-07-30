@@ -16,13 +16,13 @@ const Navbar = () => {
             <div className="nav-menu-mobile">
                 <ul className={`mobile-menu gap-5 ${showMenu ? 'active' : ''}`}>
                     <li className="nav-item">
-                        <a className="nav-font glassy" href="#about">About</a>
+                        <a className="nav-font rounded glassy" href="#about">About</a>
                     </li>
                     <li className="nav-item">
-                        <a className="nav-font glassy" href="#projects">Projects</a>
+                        <a className="nav-font rounded glassy" href="#projects">Projects</a>
                     </li>
                     <li className="nav-item">
-                        <a className="nav-font glassy" href="#contacts">Contacts</a>
+                        <a className="nav-font rounded glassy" href="#contacts">Contacts</a>
                     </li>
                 </ul>
                 { closer ? <img onClick={handleMenuToggle} src={x} className="menu-icon rounded mt-3 pl-2 glassy"/>
