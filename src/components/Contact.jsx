@@ -7,10 +7,12 @@ const Contact = ({ headingRef }) => {
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
     const [message, setMessage] = useState('');
+    const [sending, setSending] = useState(false);
 
     const sendMail = async(e) => {
         e.preventDefault();
         if (name && email && message) {
+            setSending(true);
             await axios.post('https://portfolio-server-94jy.onrender.com/send-email',{
                 name: name,
                 email: email,
@@ -21,6 +23,7 @@ const Contact = ({ headingRef }) => {
                 setName('');
                 setEmail('');
                 setMessage('');
+                setSending(false);
             })
             .catch(() => alert('An error occured while sending your message. Please try again later.'));
         } else {
@@ -52,7 +55,14 @@ const Contact = ({ headingRef }) => {
                         <input type="text" className="fill-area rounded" onChange={handleNameChange} id="fullname" name="Your name" maxLength="70" required placeholder="Full Name" value={name}/>
                         <input type="email" className="fill-area rounded" onChange={handleEmailChange} id="address" name="Your email" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" placeholder="Email Address" value={email}/>
                         <textarea rows="8" className="fill-area rounded" onChange={handleMessageChange} id="message" maxLength="500" required placeholder="Your message" value={message}/>
-                        <input type="submit" value="Email Me" className="rounded skill-btns p-2 mt-3 mb-5" id="post"/>
+                        { sending ? (
+                            <div class="d-flex mt-3 p-2 mb-5 gap-3 rounded align-items-center justify-content-center">
+                            <div class="spinner-border text-lime" style={{width: '2rem', height: '2rem', borderWidth: '0.25rem'}}></div>
+                            <p class="font-weight-bold mt-2" style={{fontSize: '18px'}}>sending...</p>
+                            </div>                          
+                        ) : (
+                            <input type="submit" value="Email Me" className="rounded skill-btns p-2 mt-3 mb-5" id="post"/>
+                        )}
                     </form>   
                 </div>
             </div>
