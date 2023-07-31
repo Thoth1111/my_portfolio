@@ -52,8 +52,8 @@ const Contact = ({ headingRef }) => {
                 </div>
                 <div className="form-entries mb-5">
                     <form onSubmit={sendMail} className="d-flex flex-column pt-4 mt-4 gap-3 justify-content-center align-items-end">
-                        <input type="text" className="fill-area rounded" onChange={handleNameChange} id="fullname" name="Your name" maxLength="70" required placeholder="Full Name" value={name}/>
-                        <input type="email" className="fill-area rounded" onChange={handleEmailChange} id="address" name="Your email" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" placeholder="Email Address" value={email}/>
+                        <input type="text" className="fill-area rounded" onChange={handleNameChange} id="fullname" name="name" maxLength="70" required placeholder="Your Full Name" value={name}/>
+                        <input type="email" className="fill-area rounded" onChange={handleEmailChange} id="address" name="email" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" placeholder="Your Email Address" value={email}/>
                         <textarea rows="8" className="fill-area rounded" onChange={handleMessageChange} id="message" maxLength="500" required placeholder="Your message" value={message}/>
                         { sending ? (
                             <div class="d-flex mt-3 p-2 mb-5 gap-3 rounded align-items-center justify-content-center">
