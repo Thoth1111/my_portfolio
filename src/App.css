@@ -56,6 +56,12 @@
     background-size: cover;
   }
 
+  .profile.dark {
+    background-image: url('./assets/images/darkmode-patterns.svg');
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
   @keyframes morph {
     0%,
     100% {

@@ -9,8 +9,8 @@ const Socials = () => {
     const sites = [
         { name: 'Github', icon: Github, link: 'https://github.com/Thoth1111'},
         { name: 'LinkedIn', icon: LinkedIn, link: 'https://www.linkedin.com/in/alwyn-androvelle-simiyu/'},
-        { name: 'Threads', icon: Threads, link: 'https://www.threads.net/@alwyn_androvelle'},
-        { name: 'Twitter', icon: Twitter, link: 'https://www.twitter.com/@androvelle'},
+        // { name: 'Threads', icon: Threads, link: 'https://www.threads.net/@alwyn_androvelle'},
+        // { name: 'Twitter', icon: Twitter, link: 'https://www.twitter.com/@androvelle'},
         { name: 'HackerRank', icon: HackerRank, link: 'https://www.hackerrank.com'}
     ];
 
