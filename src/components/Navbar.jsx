@@ -1,6 +1,10 @@
 import React, { useState } from 'react';
 import Menu from '../assets/images/menu.svg';
 import x from '../assets/images/x.svg';
+import sun from '../assets/images/sun.svg';
+import sunOff from '../assets/images/sun-off.svg';
+import moonOff from '../assets/images/moon-off.svg';
+import moon from '../assets/images/moon.svg';
 
 const Navbar = () => {
     const [showMenu, setShowMenu] = useState(false);
@@ -35,6 +39,20 @@ const Navbar = () => {
                     {/* <a className="nav-font rounded px-1" href="#credentials">Credentials</a> */}
                     <a className="nav-font rounded px-1" href="#projects">Projects</a>
                     <a className="nav-font rounded px-1" href="#contacts">Contacts</a>
+                    <div className="d-flex gap-2 align-items-center">
+                        { darkMode ? <img src={sunOff} className="ml-5 mode-icon" alt="lightMode-icon"/>
+                        : <img src={sun} className="ml-5 mode-icon" alt="lightMode-icon"/>
+                        }
+                        <div className="switch-container">
+                            <input className="toggle-checkbox" type="checkbox" id="toggle-switch" onChange={handleAppMode}/>
+                            <label htmlFor="toggle-switch" className="toggler">
+                                <div className="toggle-circle"></div>
+                            </label>
+                        </div>
+                        { darkMode ? <img src={moonOff} className="mode-icon" alt="darkMode-icon"/>
+                        : <img src={moon} className="mode-icon" alt="darkMode-icon"/>
+                        }
+                    </div>
                 </div>        
             </nav>
         </>
