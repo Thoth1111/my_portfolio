@@ -50,6 +50,43 @@
     border-bottom: 2px solid #939196;
   }
 
+  .mode-icon {
+    width: 15px;
+    height: 15px;
+  }
+
+  .switch-container {
+    position: relative;
+  }
+
+  .toggle-checkbox {
+    display: none;
+  }
+
+  .toggler {
+    width: 30px;
+    height: 15px;
+    background-color: #626868;
+    border-radius: 15px;
+    position: relative;
+    cursor: pointer;
+  }
+
+  .toggle-circle {
+    width: 12px;
+    height: 12px;
+    background-color: #ffe2fe;
+    border-radius: 50%;
+    position: absolute;
+    left: 2px;
+    bottom: 1.4px;
+    transition: transform 0.2s ease;
+  }
+
+  .toggle-checkbox:checked + .toggler .toggle-circle {
+    transform: translateX(14px);
+  }
+
   .profile {
     background-image: url('./assets/images/coloredPatterns.svg');
     background-repeat: no-repeat;
