@@ -7,6 +7,14 @@
     backdrop-filter: blur(30px);
   }
 
+  .main.dark-mode {
+    background-color: rgb(64, 61, 57);
+    color: #d3c1d2;
+    height: 100%;
+    width: 100%;
+    backdrop-filter: blur(30px);
+  }
+
   .glassy {
     background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
     -webkit-backdrop-filter: blur(50px);
@@ -26,6 +34,11 @@
     top: 0;
     left: 0;
     z-index: 99;
+  }
+
+  .nav-menu.dark-mode {
+    background: linear-gradient(135deg, rgba(37, 36, 34, 0.8), rgba(37, 36, 34, 0.7));
+    box-shadow: 0 8px 32px 0 rgba(211, 193, 210, 0.1);
   }
 
   .nav-menu-mobile {
@@ -50,9 +63,25 @@
     border-bottom: 2px solid #939196;
   }
 
+  .nav-font.dark-mode {
+    color: #d3c1d2;
+    background: transparent;
+  }
+
+  .nav-font.dark-mode:hover {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
+    -webkit-backdrop-filter: blur(50px);
+    backdrop-filter: blur(50px);
+  }
+
   .mode-icon {
     width: 15px;
     height: 15px;
+  }
+
+  .mode-toggler {
+    position: relative;
+    right: 0;
   }
 
   .switch-container {
@@ -72,6 +101,10 @@
     cursor: pointer;
   }
 
+  .toggler.dark-mode {
+    background-color: #d3c1d2;
+  }
+
   .toggle-circle {
     width: 12px;
     height: 12px;
@@ -81,6 +114,10 @@
     left: 2px;
     bottom: 1.4px;
     transition: transform 0.2s ease;
+  }
+
+  .toggle-circle.dark-mode {
+    background-color: #273c2c;
   }
 
   .toggle-checkbox:checked + .toggler .toggle-circle {
@@ -93,8 +130,8 @@
     background-size: cover;
   }
 
-  .profile.dark {
-    background-image: url('./assets/images/darkmode-patterns.svg');
+  .profile.dark-mode {
+    background-image: url('./assets/images/darkmode2-patterns.svg');
     background-repeat: no-repeat;
     background-size: cover;
   }
@@ -245,6 +282,10 @@
     font-size: 52px;
   }
 
+  .heading.dark-mode {
+    color: #ffe2fe;
+  }
+
   .animate-heading {
     animation: tracking-in-expand 0.7s cubic-bezier(0.215, 0.61, 0.355, 1) both;
   }
@@ -291,6 +332,12 @@
 
   .projects {
     background-image: url('./assets/images/coloredPatterns.svg');
+    background-repeat: repeat;
+    background-size: contain;
+  }
+
+  .projects.dark-mode {
+    background-image: url('./assets/images/darkmode2-patterns.svg');
     background-repeat: repeat;
     background-size: contain;
   }
