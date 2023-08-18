@@ -2,11 +2,11 @@ import React, { useState } from 'react';
 import Menu from '../assets/images/menu.svg';
 import x from '../assets/images/x.svg';
 import sun from '../assets/images/sun.svg';
-import sunOff from '../assets/images/sun-off.svg';
-import moonOff from '../assets/images/moon-off.svg';
+import sunDark from '../assets/images/sun-darkmode.svg'
 import moon from '../assets/images/moon.svg';
+import moonDark from '../assets/images/moon-darkmode.svg'
 
-const Navbar = () => {
+const Navbar = ({ darkMode, handleAppMode }) => {
     const [showMenu, setShowMenu] = useState(false);
     const [closer, setCloser] = useState(false);
 
@@ -33,24 +33,24 @@ const Navbar = () => {
                 : <img onClick={handleMenuToggle} src={Menu} className="menu-icon rounded mt-3 pl-2 glassy"/>
                 }
             </div>
-            <nav className="nav-menu py-2 px-4">
+            <nav className={`nav-menu py-2 px-4 ${darkMode ? 'dark-mode' : ''}`}>
                 <div className="d-flex justify-content-center align-items-center gap-5 container-fluid">
-                    <a className="nav-font rounded px-1" href="#about">About</a>
-                    {/* <a className="nav-font rounded px-1" href="#credentials">Credentials</a> */}
-                    <a className="nav-font rounded px-1" href="#projects">Projects</a>
-                    <a className="nav-font rounded px-1" href="#contacts">Contacts</a>
+                    <a className={`nav-font rounded px-1 ${darkMode ? 'dark-mode' : ''}`} href="#about">About</a>
+                    {/* <a className={`nav-font rounded px-1 ${darkMode ? 'dark-mode' : ''}`} href="#credentials">Credentials</a> */}
+                    <a className={`nav-font rounded px-1 ${darkMode ? 'dark-mode' : ''}`} href="#projects">Projects</a>
+                    <a className={`nav-font rounded px-1 ${darkMode ? 'dark-mode' : ''}`} href="#contacts">Contacts</a>
                     <div className="d-flex gap-2 align-items-center">
-                        { darkMode ? <img src={sunOff} className="ml-5 mode-icon" alt="lightMode-icon"/>
-                        : <img src={sun} className="ml-5 mode-icon" alt="lightMode-icon"/>
-                        }
+                        { darkMode ? <img src={sunDark} className="ml-5 mode-icon" alt="mode-icon"/>
+                        : <img src={sun} className="ml-5 mode-icon" alt="mode-icon"/>
+                        }                    
                         <div className="switch-container">
                             <input className="toggle-checkbox" type="checkbox" id="toggle-switch" onChange={handleAppMode}/>
-                            <label htmlFor="toggle-switch" className="toggler">
-                                <div className="toggle-circle"></div>
+                            <label htmlFor="toggle-switch" className={`toggler ${darkMode ? 'dark-mode' : ''}`}>
+                                <div className={`toggle-circle ${darkMode ? 'dark-mode' : ''}`}></div>
                             </label>
                         </div>
-                        { darkMode ? <img src={moonOff} className="mode-icon" alt="darkMode-icon"/>
-                        : <img src={moon} className="mode-icon" alt="darkMode-icon"/>
+                        { darkMode ? <img src={moonDark} className="mode-icon" alt="mode-icon"/>
+                        : <img src={moon} className="mode-icon" alt="mode-icon"/>
                         }
                     </div>
                 </div>        

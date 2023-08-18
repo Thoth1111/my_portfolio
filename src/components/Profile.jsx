@@ -2,9 +2,9 @@ import React from 'react';
 import profile from '../assets/images/profile.jpg';
 import Socials from './Socials';
 
-const Profile = () => {
+const Profile = ( { darkMode }) => {
     return (
-        <section className="profile pt-5">
+        <section className={`profile pt-5 ${darkMode ? 'dark-mode' : ''}`}>
         <div className="profile-cont px-auto my-5 p-5" style={{gap:'15%'}}>
             <div className="w-5">
                 <img src={profile} className="profile-pic" />

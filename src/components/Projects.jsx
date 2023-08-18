@@ -45,9 +45,9 @@ const projectList = [
     }
 ];
 
-const Projects = ( { headingRef }) => {
+const Projects = ({ darkMode, headingRef}) => {
     return (
-        <section className="d-flex flex-column align-items-center justify-content-center pt-5 mb-5 projects">
+        <section className={`d-flex flex-column align-items-center justify-content-center pt-5 mb-5 projects ${darkMode ? 'dark-mode' : ''}`}>
             <h1 className="heading" id="projects" ref={headingRef}>Projects</h1>
             <div className="d-flex flex-column justify-content-center align-items-center">
                 {projectList.map((project, index) => (
