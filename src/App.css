@@ -286,7 +286,7 @@
     color: #ffe2fe;
   }
 
-  .animate-heading {
+  .heading.animate {
     animation: tracking-in-expand 0.7s cubic-bezier(0.215, 0.61, 0.355, 1) both;
   }
 
