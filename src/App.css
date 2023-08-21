@@ -286,7 +286,7 @@
     color: #ffe2fe;
   }
 
-  .animate-heading {
+  .heading.animate {
     animation: tracking-in-expand 0.7s cubic-bezier(0.215, 0.61, 0.355, 1) both;
   }
 
@@ -470,6 +470,14 @@
     backdrop-filter: blur(30px);
   }
 
+  .main.dark-mode {
+    background-color: rgb(64, 61, 57);
+    color: #d3c1d2;
+    height: 100%;
+    width: 100%;
+    backdrop-filter: blur(30px);
+  }
+
   .glassy {
     background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
     -webkit-backdrop-filter: blur(50px);
@@ -498,13 +506,18 @@
     justify-content: center;
     align-items: center;
     width: 60vw;
-    height: 400px;
+    height: 300px;
     gap: 20%;
     list-style: none;
     background: linear-gradient(135deg, rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.6));
     border: 2px solid rgba(211, 193, 210, 0.37);
     -webkit-backdrop-filter: blur(20px);
     backdrop-filter: blur(20px);
+  }
+
+  .mobile-menu.dark-mode {
+    background: linear-gradient(135deg, rgba(37, 36, 34, 0.8), rgba(37, 36, 34, 0.7));
+    box-shadow: 0 8px 32px 0 rgba(211, 193, 210, 0.1);
   }
 
   .mobile-menu.active {
@@ -517,10 +530,7 @@
   }
 
   .nav-item {
-    border-top: 1px solid #939196;
-    border-bottom: 1px solid #939196;
     width: 90%;
-    text-align: center;
     padding: 10px 0;
   }
 
@@ -528,6 +538,56 @@
     font-size: 18px;
     font-weight: 600;
     color: #273c2c;
+  }
+
+  .mode-icon {
+    width: 15px;
+    height: 15px;
+  }
+
+  .mode-toggler {
+    position: relative;
+    right: 0;
+  }
+
+  .switch-container {
+    position: relative;
+  }
+
+  .toggle-checkbox {
+    display: none;
+  }
+
+  .toggler {
+    width: 30px;
+    height: 15px;
+    background-color: #626868;
+    border-radius: 15px;
+    position: relative;
+    cursor: pointer;
+  }
+
+  .toggler.dark-mode {
+    background-color: #d3c1d2;
+  }
+
+  .toggle-circle {
+    width: 12px;
+    height: 12px;
+    background-color: #ffe2fe;
+    border-radius: 50%;
+    position: absolute;
+    left: 2px;
+    bottom: 1.4px;
+    transition: transform 0.2s ease;
+  }
+
+  .toggle-circle.dark-mode {
+    background-color: #273c2c;
+  }
+
+  .toggle-checkbox:checked + .toggler .toggle-circle {
+    transform: translateX(14px);
   }
 
   .intro {
@@ -576,6 +636,12 @@
 
   .profile {
     background-image: url('./assets/images/coloredPatterns.svg');
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  .profile.dark-mode {
+    background-image: url('./assets/images/darkmode2-patterns.svg');
     background-repeat: no-repeat;
     background-size: cover;
   }
@@ -694,6 +760,12 @@
     background-image: url('./assets/images/coloredPatterns.svg');
     background-repeat: no-repeat;
     background-size: cover;
+  }
+
+  .projects.dark-mode {
+    background-image: url('./assets/images/darkmode2-patterns.svg');
+    background-repeat: repeat;
+    background-size: contain;
   }
 
   .project-card {
