@@ -1,13 +1,34 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import axios from 'axios';
-import withIntersectionObserver from './withObserver';
 import Socials from './Socials';
 
-const Contact = ({ headingRef }) => {
+const Contact = ({ darkMode }) => {
+    const [isVisible, setIsVisible] = useState(false);
+    const headingRef = useRef(null);
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
     const [message, setMessage] = useState('');
     const [sending, setSending] = useState(false);
+
+    useEffect(() => {
+        const observer = new IntersectionObserver((entries) =>{
+            entries.forEach((entry) => {
+                if(entry.isIntersecting) {
+                    setIsVisible(true);
+                }
+            });
+        });
+
+        if(headingRef.current){
+            observer.observe(headingRef.current);
+        };
+
+        return () => {
+            if(headingRef.current){
+                observer.unobserve(headingRef.current)
+            }
+        };
+    }, []);
 
     const sendMail = async(e) => {
         e.preventDefault();
@@ -45,7 +66,7 @@ const Contact = ({ headingRef }) => {
 
     return (
         <section className="d-flex flex-column align-items-center justify-content-center pb-4 pt-5 contact">
-            <h1 className="heading" id="contacts" ref={headingRef}>Get in touch</h1>
+            <h1 ref={headingRef} className={`heading ${ isVisible ? 'animate' : ''}`} id="contacts" style={ darkMode ? {color: '#ffe2fe'} : {}}>Get in touch</h1>
             <div className="contact-cont mb-5">
                 <div className="p-5 CTA">
                     <h2 className="px-auto py-auto">I'm always interested in hearing about new projects, so if you'd like to chat please get in touch.</h2>
@@ -71,4 +92,4 @@ const Contact = ({ headingRef }) => {
     );
 };
 
-export default withIntersectionObserver(Contact);
+export default Contact;
