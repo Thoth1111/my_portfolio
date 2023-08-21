@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import Menu from '../assets/images/menu.svg';
+import MenuDark from '../assets/images/menu-dark.svg';
 import x from '../assets/images/x.svg';
+import xDark from '../assets/images/x-dark.svg';
 import sun from '../assets/images/sun.svg';
 import sunDark from '../assets/images/sun-darkmode.svg'
 import moon from '../assets/images/moon.svg';
@@ -18,20 +20,42 @@ const Navbar = ({ darkMode, handleAppMode }) => {
     return (
         <>
             <div className="nav-menu-mobile">
-                <ul className={`mobile-menu gap-5 ${showMenu ? 'active' : ''}`}>
+                <ul className={`mobile-menu gap-3 ${showMenu ? 'active' : ''} ${ darkMode ? 'dark-mode' : ''}`}>
                     <li className="nav-item">
-                        <a className="nav-font rounded glassy" href="#about">About</a>
+                        <a className="nav-font rounded" href="#about" style={ darkMode ? {color:'#ffe2fe'} : {}}>About</a>
                     </li>
                     <li className="nav-item">
-                        <a className="nav-font rounded glassy" href="#projects">Projects</a>
+                        <a className="nav-font rounded" href="#projects" style={ darkMode ? {color:'#ffe2fe'} : {}}>Projects</a>
                     </li>
                     <li className="nav-item">
-                        <a className="nav-font rounded glassy" href="#contacts">Contacts</a>
+                        <a className="nav-font rounded" href="#contacts" style={ darkMode ? {color:'#ffe2fe'} : {}}>Contacts</a>
+                    </li>
+                    <li className="nav-item">
+                        <div className="d-flex gap-2 align-items-center">
+                            { darkMode ? <img src={sunDark} className="ml-5 mode-icon" alt="mode-icon"/>
+                            : <img src={sun} className="ml-5 mode-icon" alt="mode-icon"/>
+                            }                    
+                            <div className="switch-container">
+                                <input className="toggle-checkbox" type="checkbox" id="toggle-switch" onChange={handleAppMode}/>
+                                <label htmlFor="toggle-switch" className={`toggler ${darkMode ? 'dark-mode' : ''}`}>
+                                    <div className={`toggle-circle ${darkMode ? 'dark-mode' : ''}`}></div>
+                                </label>
+                            </div>
+                            { darkMode ? <img src={moonDark} className="mode-icon" alt="mode-icon"/>
+                            : <img src={moon} className="mode-icon" alt="mode-icon"/>
+                            }
+                        </div>
                     </li>
                 </ul>
-                { closer ? <img onClick={handleMenuToggle} src={x} className="menu-icon rounded mt-3 pl-2 glassy"/>
-                : <img onClick={handleMenuToggle} src={Menu} className="menu-icon rounded mt-3 pl-2 glassy"/>
-                }
+                { closer && darkMode ? (
+                    <img onClick={handleMenuToggle} src={xDark} className="menu-icon rounded mt-3 pl-2 glassy"/>
+                ) : closer && !darkMode ? (
+                    <img onClick={handleMenuToggle} src={x} className="menu-icon rounded mt-3 pl-2 glassy"/>
+                ) : !closer && !darkMode ? (
+                    <img onClick={handleMenuToggle} src={Menu} className="menu-icon rounded mt-3 pl-2 glassy"/>
+                ) : (
+                    <img onClick={handleMenuToggle} src={MenuDark} className="menu-icon rounded mt-3 pl-2 glassy"/>
+                )}
             </div>
             <nav className={`nav-menu py-2 px-4 ${darkMode ? 'dark-mode' : ''}`}>
                 <div className="d-flex justify-content-center align-items-center gap-5 container-fluid">
