@@ -1,5 +1,4 @@
-import React from 'react';
-import withIntersectionObserver from './withObserver';
+import React, { useState, useEffect, useRef} from 'react';
 import Slideshow from './Slideshow';
 import vespa from '../assets/images/vespas.png';
 import vespa1 from '../assets/images/vespas1.png';
@@ -45,10 +44,33 @@ const projectList = [
     }
 ];
 
-const Projects = ({ darkMode, headingRef}) => {
+const Projects = ({ darkMode }) => {
+    const [isVisible, setIsVisible] = useState(false);
+    const headingRef = useRef(null);
+
+    useEffect(() => {
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if(entry.isIntersecting){
+                    setIsVisible(true);
+                }
+            });
+        });
+
+        if(headingRef.current) {
+            observer.observe(headingRef.current);
+        }
+
+        return ()=> {
+            if(headingRef.current) {
+                observer.unobserve(headingRef.current);
+            }
+        };
+    }, []);
+
     return (
         <section className={`d-flex flex-column align-items-center justify-content-center pt-5 mb-5 projects ${darkMode ? 'dark-mode' : ''}`}>
-            <h1 className="heading" id="projects" ref={headingRef}>Projects</h1>
+            <h1 ref={headingRef} className={`heading ${ isVisible ? 'animate' : ''}`} id="projects" style={ darkMode ? {color:'#ffe2fe'} : {}}>Projects</h1>
             <div className="d-flex flex-column justify-content-center align-items-center">
                 {projectList.map((project, index) => (
                     <div key={index} className="gap-5 p-4 my-5 project-card">
@@ -60,7 +82,7 @@ const Projects = ({ darkMode, headingRef}) => {
                                     <span key={index} className="stack fw-bold">{item}</span>
                                 ))}
                             </div>
-                            <p>{project.description}</p>
+                            <p style={ darkMode ? {color:'#d3d3d3'} : {}}>{project.description}</p>
                             <div className="d-flex justify-content-between gap-5 align-items-center my-4">
                                 <a href={project.link} className="border rounded skill-btns px-3" target="_blank" rel="noreferrer">Project Demo</a>
                                 <a href={project.source} className="border rounded skill-btns px-3" target="_blank" rel="noreferrer">Source Code</a>
@@ -69,9 +91,8 @@ const Projects = ({ darkMode, headingRef}) => {
                     </div>
                 ))}
             </div>
-        </section>
-                                
+        </section>                                
     );
 };
 
-export default withIntersectionObserver(Projects);
+export default Projects;
