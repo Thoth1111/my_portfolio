@@ -18,6 +18,7 @@ import Rails from '../assets/images/rails.png';
 import Jquery from '../assets/images/jquery.png';
 import Github from '../assets/images/githubskill.png';
 import Agile from '../assets/images/agile.png';
+import TypeScript from '../assets/images/typescript.png';
 
 const carouselItems = [
     {name: 'HTML5', logo: Html, description: 'Web-dev'},
@@ -35,7 +36,8 @@ const carouselItems = [
     {name: 'Github', logo: Github, description: 'Tools'},        
     {name: 'Git', logo: Git, description: 'Version Control'},       
     {name: 'PostgreSQL', logo: Postgres, description: 'Databases'},
-    {name: 'Agile', logo: Agile, description: 'Methodologies'}
+    {name: 'Agile', logo: Agile, description: 'Methodologies'},
+    {name: 'TypeScript', logo: TypeScript, description: 'Languages'}
 ];
 
 const Carousel = () => {
